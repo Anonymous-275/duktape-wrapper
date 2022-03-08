@@ -1,10 +1,18 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.0)
 project(duktape-wrapper)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(${PROJECT_NAME} src/main.cpp)
+add_library(${PROJECT_NAME} STATIC
+        src/duk_wrapper.cpp include/duk_wrapper.h
+        include/duktape/src/duktape.c include/duktape/extras/console/duk_console.c
+        )
 
-#target_link_libraries(${PROJECT_NAME} ${DUKTAPE_LIBRARY})
 
-target_include_directories(${PROJECT_NAME} PRIVATE "include")
+add_executable(duk_wrapper_example src/main.cpp)
+target_link_libraries(duk_wrapper_example duktape-wrapper)
+
+include_directories(include)
+include_directories(include/duktape/src)
+target_include_directories(${PROJECT_NAME} PRIVATE "include/duktape/extras")
+
