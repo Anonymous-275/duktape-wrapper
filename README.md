@@ -6,8 +6,8 @@ C++11 wrapper for the [duktape](https://github.com/svaarala/duktape) library tha
 - CMake 3.0
 
 # Usage
-- Clone recursively as a submodule or build the library by just cloning it 
-- Add the subdirectory in your CMakeLists (skip this if you built it yourself)
+- Clone recursively as a submodule or build the library yourself skipping the next step
+- Add the subdirectory in your CMakeLists
 - Link it to your executable in your project
 - Include "duk_wrapper.h" to use it.
 
