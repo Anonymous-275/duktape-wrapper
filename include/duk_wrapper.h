@@ -10,6 +10,7 @@ public:
     duktape();
     ~duktape();
     void push_file(const char* Name);
+    void call_function(const char* Name);
     void push_function(const char* Name, duk_c_function Func, int Argc);
 private:
     duk_context* ctx;

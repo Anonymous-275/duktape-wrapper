@@ -43,3 +43,7 @@ void duktape::push_function(const char *Name, duk_c_function Func, int Argc) {
     duk_push_c_function(ctx, Func, Argc);
     duk_put_global_string(ctx, Name);
 }
+
+void duktape::call_function(const char* Name) {
+   // duk_safe_call(ctx, call_function, nullptr, 1, 0);
+}

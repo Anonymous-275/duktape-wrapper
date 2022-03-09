@@ -9,7 +9,7 @@ add_library(${PROJECT_NAME} STATIC
         )
 
 
-add_executable(duk_wrapper_example src/main.cpp)
+add_executable(duk_wrapper_example src/example.cpp)
 target_link_libraries(duk_wrapper_example duktape-wrapper)
 
 include_directories(include)
