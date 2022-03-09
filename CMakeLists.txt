@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 project(duktape-wrapper)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 
 add_library(${PROJECT_NAME} STATIC
         src/duk_wrapper.cpp include/duk_wrapper.h
