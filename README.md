@@ -3,7 +3,7 @@ C++11 wrapper for the [duktape](https://github.com/svaarala/duktape) library tha
 
 # Requirements
 - C++11 capable compiler
-- CMake 3.0
+- CMake 3.0 and above
 
 # Usage
 - Clone recursively as a submodule or build the library yourself skipping the next step
