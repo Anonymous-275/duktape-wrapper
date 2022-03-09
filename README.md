@@ -16,7 +16,7 @@ C++11 wrapper for the [duktape](https://github.com/svaarala/duktape) library tha
 #include "duk_wrapper.h"
 
 int main() {
-    duktape engine; //create and initialize duktape and all adons
+    duktape engine; //create and initialize duktape and all add-ons
     engine.push_file("example.js"); //push a file to be parsed and executed
     return 0;
 }
