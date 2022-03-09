@@ -1,5 +1,5 @@
 # Summary
-C++11 wrapper for the [duktape](https://github.com/svaarala/duktape) library that aims to make it feel like [NodeJS](https://nodejs.org) when scripting
+C++11 wrapper for the [duktape](https://github.com/svaarala/duktape) library that also aims to make it feel like [NodeJS](https://nodejs.org) when scripting
 
 # Requirements
 - C++11 capable compiler
