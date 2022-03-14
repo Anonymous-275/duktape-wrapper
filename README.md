@@ -19,7 +19,7 @@ C++17 wrapper for the [duktape](https://github.com/svaarala/duktape) library tha
 int main() {
     int x = 0;
     duk_wrapper::duktape engine; //create and initialize duktape and all addons
-    engine.push_function("clog", [&x](int val, double val2) { //any basic type works
+    engine.push_function("clog", [&x](int val, double val2) { //you can capture
         std::cout << val << " : " << val2 << std::endl;
         x = 12;
         return "hello from clog"; //you can return virtually any basic value
