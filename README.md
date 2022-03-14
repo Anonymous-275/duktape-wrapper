@@ -9,7 +9,7 @@ C++17 wrapper for the [duktape](https://github.com/svaarala/duktape) library tha
 - Clone recursively as a submodule or build the library by just cloning it 
 - Add the subdirectory in your CMakeLists (skip this if you built it yourself)
 - Link it to your executable in your project
-- Include "duk_wrapper.h" to use it.
+- Include "duk_wrapper.h" to use it
 
 # Example
 ```cpp
