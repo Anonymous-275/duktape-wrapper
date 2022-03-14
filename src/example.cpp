@@ -4,15 +4,18 @@
 ///
 
 #include "duk_wrapper.h"
-
-int clog(duk_context* ctx) {
-    printf("print func -> %s\n", duk_safe_to_string(ctx, 0));
-    return 0;
-}
+#include <iostream>
 
 int main() {
-    duktape engine;
-    engine.push_function("clog", clog, 1);
+    int x = 0;
+    duk_wrapper::duktape engine;
+    engine.push_function("clog", [&x](int val, double val2) {
+        std::cout << val << " : " << val2 << std::endl;
+        x = 12;
+        return "hello from clog";
+    });
+    std::cout << "x is " << x << std::endl;
     engine.push_file("../example.js");
+    std::cout << "x is " << x << std::endl;
     return 0;
 }

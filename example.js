@@ -1,4 +1,2 @@
-console.log("hello world")
-
-clog("hello there")
+console.log("returned ->", clog(24, 256.3))
 

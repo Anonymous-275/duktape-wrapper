@@ -1,8 +1,8 @@
 # Summary
-C++11 wrapper for the [duktape](https://github.com/svaarala/duktape) library that aims to make it feel like [NodeJS](https://nodejs.org) when scripting.
+C++17 wrapper for the [duktape](https://github.com/svaarala/duktape) library that aims to make it feel like [NodeJS](https://nodejs.org) when scripting.
 
 # Requirements
-- C++11 capable compiler
+- C++17 capable compiler
 - CMake 3.0
 
 # Usage
@@ -13,11 +13,20 @@ C++11 wrapper for the [duktape](https://github.com/svaarala/duktape) library tha
 
 # Example
 ```cpp
-#include "duk_wrapper.h"
+#include "duk_wrapper.h" //library header include
+#include <iostream>
 
 int main() {
-    duktape engine; //create and initialize duktape and all adons
+    int x = 0;
+    duk_wrapper::duktape engine; //create and initialize duktape and all addons
+    engine.push_function("clog", [&x](int val, double val2) { //any basic type works
+        std::cout << val << " : " << val2 << std::endl;
+        x = 12;
+        return "hello from clog"; //you can return virtually any basic value
+    });
+    std::cout << "x is " << x << std::endl; // x is still 0
     engine.push_file("example.js"); //push a file to be parsed and executed
+    std::cout << "x is " << x << std::endl; // x was changed since clog was called
     return 0;
 }
 ```
